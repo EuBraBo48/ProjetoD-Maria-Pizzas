@@ -21,7 +21,7 @@ const listaPadraoProdutos = [
         descricao: "Mussarela, calabresa fatiada, cebola e orégano.",
         preco: 45.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/calabresa.png"
+        imagem: "projeto ft/ft das pizza/calabresa.png"
     },
     {
         id: 2,
@@ -29,7 +29,7 @@ const listaPadraoProdutos = [
         descricao: "Mussarela, tomate em rodelas, manjericão fresco e orégano.",
         preco: 42.00,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/Marquerita.jpg"
+        imagem: "projeto ft/ft das pizza/Marquerita.jpg"
     },
     {
         id: 3,
@@ -37,7 +37,7 @@ const listaPadraoProdutos = [
         descricao: "MOLHO DE TOMATE, MUSSARELA, ATUM, CEBOLA, azeitonas e orégano.",
         preco: 42.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/atum.jpg"
+        imagem: "projeto ft/ft das pizza/atum.jpg"
     },
     {
         id: 4,
@@ -45,7 +45,7 @@ const listaPadraoProdutos = [
         descricao: "MOLHO DE TOMATE, MUSSARELA, CEBOLA, BACON, azeitonas e orégano.",
         preco: 42.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/Bacon.jpg"
+        imagem: "projeto ft/ft das pizza/Bacon.jpg"
     },
     {
         id: 5,
@@ -53,7 +53,7 @@ const listaPadraoProdutos = [
         descricao: "MOLHO DE TOMATE, MUSSARELA, FRANGO, CATUPIRY, MILHO, azeitonas e orégano.",
         preco: 37.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/Caipira.jpg"
+        imagem: "projeto ft/ft das pizza/Caipira.jpg"
     },
     {
         id: 6,
@@ -61,7 +61,7 @@ const listaPadraoProdutos = [
         descricao: "MOLHO DE TOMATE, MUSSARELA, CAMARÃO, CATUPIRY, orégano.",
         preco: 55.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/Camarão.png"
+        imagem: "projeto ft/ft das pizza/Camarão.png"
     },
     {
         id: 7,
@@ -69,7 +69,7 @@ const listaPadraoProdutos = [
         descricao: "MOLHO DE TOMATE, MUSSARELA, FRANGO, CATUPIRY, MILHO, azeitonas e orégano.",
         preco: 37.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/Mista.jpg"
+        imagem: "projeto ft/ft das pizza/Mista.jpg"
     },
     {
         id: 8,
@@ -77,7 +77,7 @@ const listaPadraoProdutos = [
         descricao: "MOLHO DE TOMATE, MUSSARELA, azeitonas e orégano",
         preco: 35.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/mussarela.png"
+        imagem: "projeto ft/ft das pizza/mussarela.png"
     },
     {
         id: 9,
@@ -85,7 +85,7 @@ const listaPadraoProdutos = [
         descricao: "MOLHO DE TOMATE, MUSSARELA, TOMATE, MILHO E AZEITONAS.",
         preco: 35.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/Napolitana.jpg"
+        imagem: "projeto ft/ft das pizza/Napolitana.jpg"
     },
     {
         id: 10,
@@ -93,7 +93,7 @@ const listaPadraoProdutos = [
         descricao: "MOLHO DE TOMATE, MUSSARELA, CHARQUE, CATUPIRY, MILHO, CEBOLA E MILHO.",
         preco: 42.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/Nodestina.jpg"
+        imagem: "projeto ft/ft das pizza/Nodestina.jpg"
     },
     {
         id: 11,
@@ -101,7 +101,7 @@ const listaPadraoProdutos = [
         descricao: "Mussarela, presunto, ovos cozidos, cebola, ervilha, azeitonas e orégano.",
         preco: 35.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/portugeusa.jpg"
+        imagem: "projeto ft/ft das pizza/portugeusa.jpg"
     },
     {
         id: 12,
@@ -109,7 +109,7 @@ const listaPadraoProdutos = [
         descricao: "Mussarela, fatias de presunto magro, tomate, azeitonas e orégano.",
         preco: 35.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/presunto].jpg"
+        imagem: "projeto ft/ft das pizza/presunto].jpg"
     },
     {
         id: 13,
@@ -117,7 +117,7 @@ const listaPadraoProdutos = [
         descricao: "Mussarela, carne de sol, cebola roxa, manteiga da terra e orégano.",
         preco: 50.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/sertaneja.png"
+        imagem: "projeto ft/ft das pizza/sertaneja.png"
     },
     {
         id: 14,
@@ -125,7 +125,7 @@ const listaPadraoProdutos = [
         descricao: "Mussarela, provolone, catupiry e orégano.",
         preco: 35.90,
         categoria: "Pizzas",
-        imagem: "src/projeto ft/ft das pizza/trez quijos.png"
+        imagem: "projeto ft/ft das pizza/trez quijos.png"
     },
     {
         id: 15,
@@ -149,7 +149,7 @@ const listaPadraoProdutos = [
         descricao: "Refrigerante Coca-Cola 1Litros gelado.",
         preco: 10.00,
         categoria: "Bebidas",
-        imagem: "src/projeto ft/ftBebida/Coca.jpg"
+        imagem: "projeto ft/ftBebida/Coca.jpg"
     },
     {
         id: 18,
@@ -157,7 +157,7 @@ const listaPadraoProdutos = [
         descricao: "Refrigerante Coca-Cola 350ML gelado.",
         preco: 6.00,
         categoria: "Bebidas",
-        imagem: "src/projeto ft/ftBebida/CocaLata.jpg"
+        imagem: "projeto ft/ftBebida/CocaLata.jpg"
     },
     {
         id: 19,
@@ -165,7 +165,7 @@ const listaPadraoProdutos = [
         descricao: "Refrigerante Guarána Antártica 1 Litros gelado.",
         preco: 10.00,
         categoria: "Bebidas",
-        imagem: "src/projeto ft/ftBebida/guarana.jpg"
+        imagem: "projeto ft/ftBebida/guarana.jpg"
     },
     {
         id: 20,
@@ -173,7 +173,7 @@ const listaPadraoProdutos = [
         descricao: "Refrigerante Guarána 350ML gelado.",
         preco: 6.00,
         categoria: "Bebidas",
-        imagem: "src/projeto ft/ftBebida/guaranaLata.jpg"
+        imagem: "projeto ft/ftBebida/guaranaLata.jpg"
     }
 
 
