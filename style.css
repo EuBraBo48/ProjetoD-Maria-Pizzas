@@ -96,6 +96,8 @@ header {
     font-weight: 700;
     color: white;
 }
+
+
 .day-open { background-color: var(--success); }
 .day-closed { background-color: var(--danger); }
 
@@ -294,7 +296,7 @@ main {
 
 /* Modal Carrinho */
 .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-.btn-clear { background: none; border: none; color: var(--danger); font-weight: 700; cursor: pointer; }
+.btn-clear { background: none; border: none; color: var(--danger); font-weight: 700; cursor: pointer;}
 
 .cart-item {
     display: flex; gap: 15px;
@@ -414,4 +416,25 @@ main {
 .admin-top-btn:active {
     transform: scale(0.9);
     background-color: rgba(255, 255, 255, 0.95);
+}
+
+
+/* --- AJUSTE DO CARRINHO --- */
+/* Certifique-se de aplicar uma margem na direita do botão de limpar para empurrá-lo para o lado */
+.botao-limpar-carrinho {
+    margin-right: 30px; /* Cria um espaço seguro entre ele e o X */
+    cursor: pointer;
+}
+
+/* --- CORES DINÂMICAS DO LOGO DM --- */
+/* Quando a loja estiver aberta (Verde) */
+.logo.loja-aberta {
+    color: #2e7d32 !important;        /* Texto Verde */
+    border-color: #2e7d32 !important; /* Borda Verde */
+}
+
+/* Quando a loja estiver fechada (Vermelho) */
+.logo.loja-fechada {
+    color: #d32f2f !important;        /* Texto Vermelho */
+    border-color: #d32f2f !important; /* Borda Vermelha */
 }

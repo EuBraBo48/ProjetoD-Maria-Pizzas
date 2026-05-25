@@ -6,8 +6,7 @@ const lojaConfig = {
     horaAbertura: 18,
     horaFechamento: 23,
     // Dias da semana que a loja abre (0 = Domingo, 1 = Segunda, 2 = Terça, etc.)
-    // Exemplo: Abre de Terça a Domingo (fecha segunda)
-    diasAbertos: [0, 2, 3, 4, 5, 6] 
+    diasAbertos: [0,2, 3, 4, 5, 6] 
 };
 
 const categorias = ['Todos', 'Pizzas', 'Brotinhos', 'Açaí', 'Bebidas'];
@@ -175,14 +174,12 @@ const listaPadraoProdutos = [
         categoria: "Bebidas",
         imagem: "projeto ft/ftBebida/guaranaLata.jpg"
     }
-
-
 ];
 
 // 2. O sistema pega o que está salvo, mas se não tiver nada, pega a lista padrão
 let produtos = JSON.parse(localStorage.getItem('dmaria_produtos')) || listaPadraoProdutos;
 
-// 3. SEGREDO AQUI: Se você adicionou itens novos no código, ele atualiza a memória do navegador!
+// 3. Se você adicionou itens novos no código, ele atualiza a memória do navegador!
 if (produtos.length < listaPadraoProdutos.length) {
     produtos = listaPadraoProdutos;
     localStorage.setItem('dmaria_produtos', JSON.stringify(produtos));
@@ -207,12 +204,13 @@ document.addEventListener('DOMContentLoaded', () => {
     atualizarBarraCarrinho();
 });
 
-// Verifica se a loja está aberta e mostra o badge
+// CORRIGIDO: Verifica se a loja está aberta, muda o badge E altera a cor do logo DM
 function verificarStatusLoja() {
     const dataAtual = new Date();
     const horaAtual = dataAtual.getHours();
     const diaAtual = dataAtual.getDay();
     const statusEl = document.getElementById('store-status');
+    const logoDM = document.querySelector('.logo'); // Pega a div do logo DM do HTML
     
     const abreHoje = lojaConfig.diasAbertos.includes(diaAtual);
     const dentroDoHorario = horaAtual >= lojaConfig.horaAbertura && horaAtual < lojaConfig.horaFechamento;
@@ -220,9 +218,21 @@ function verificarStatusLoja() {
     if (abreHoje && dentroDoHorario) {
         statusEl.textContent = 'Loja Aberta';
         statusEl.className = 'status-badge status-open';
+        
+        // Aplica classe verde no logo DM se ele existir
+        if (logoDM) {
+            logoDM.classList.add('loja-aberta');
+            logoDM.classList.remove('loja-fechada');
+        }
     } else {
         statusEl.textContent = 'Loja Fechada';
         statusEl.className = 'status-badge status-closed';
+        
+        // Aplica classe vermelha no logo DM se ele existir
+        if (logoDM) {
+            logoDM.classList.add('loja-fechada');
+            logoDM.classList.remove('loja-aberta');
+        }
     }
 }
 
@@ -256,8 +266,6 @@ function mudarCategoria(cat) {
 
 function renderizarProdutos() {
     const grid = document.getElementById('products-grid');
-    
-    // Removendo os itens antigos antes de renderizar para reiniciar a animação
     grid.innerHTML = '';
     
     const produtosFiltrados = categoriaAtual === 'Todos' 
@@ -303,7 +311,7 @@ function changeModalQty(delta) {
 }
 
 function atualizarModalPreco() {
-    document.getElementById('modal-qty').textContent = quantidadeModal;
+    document.getElementById('modal-qty').textContent = Club = quantidadeModal;
     const total = produtoAtualModal.preco * quantidadeModal;
     document.getElementById('modal-btn-price').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
 }
@@ -407,7 +415,7 @@ function alterarQtdCarrinho(index, delta) {
     if (carrinho[index].quantidade + delta > 0) {
         carrinho[index].quantidade += delta;
     } else {
-        carrinho.splice(index, 1); // Remove se zerar
+        carrinho.splice(index, 1);
     }
     salvarCarrinho();
     renderizarCarrinho();
@@ -496,11 +504,9 @@ ${textoItens}
 💰 *TOTAL: R$ ${valorTotal.toFixed(2).replace('.', ',')}*
     `.trim();
 
-    // Redirecionar para WhatsApp
     const url = `https://wa.me/${lojaConfig.telefoneWhatsApp}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, '_blank');
     
-    // Limpa o carrinho após finalizar
     carrinho = [];
     salvarCarrinho();
     atualizarBarraCarrinho();
@@ -508,9 +514,8 @@ ${textoItens}
 }
 
 // ==========================================
-// 8. CONTROLE ADMINISTRATIVO (CRUD) - ATUALIZADO COM BOTÃO DE FOTO
+// 8. CONTROLE ADMINISTRATIVO (CRUD)
 // ==========================================
-
 const ADMIN_USER = "admin";
 const ADMIN_PASS = "1234";
 
@@ -529,7 +534,6 @@ function loginAdmin(event) {
     }
 }
 
-// FUNÇÃO NOVA: Transforma o arquivo de foto escolhido em texto salvo
 function carregarImagemLocal(event) {
     const arquivo = event.target.files[0];
     const textoNome = document.getElementById('crud-imagem-nome');
@@ -539,7 +543,6 @@ function carregarImagemLocal(event) {
         
         const reader = new FileReader();
         reader.onload = function(e) {
-            // Guarda o código gerado da imagem no campo oculto
             document.getElementById('crud-imagem-atual').value = e.target.result;
         };
         reader.readAsDataURL(arquivo);
@@ -570,7 +573,6 @@ function abrirFormProduto() {
     document.getElementById('form-title').textContent = 'Novo Produto';
     document.getElementById('product-crud-form').reset();
     
-    // Limpa os campos de arquivo
     document.getElementById('crud-id').value = '';
     document.getElementById('crud-imagem-file').value = '';
     document.getElementById('crud-imagem-atual').value = '';
@@ -590,18 +592,14 @@ function salvarProdutoCrud(event) {
     const descricao = document.getElementById('crud-descricao').value;
     const preco = parseFloat(document.getElementById('crud-preco').value);
     const categoria = document.getElementById('crud-categoria').value;
-    
-    // Pega a imagem carregada pelo botão. Se não escolheu nenhuma, coloca uma padrão
     const imagem = document.getElementById('crud-imagem-atual').value || "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500";
 
     if (id) {
-        // Editar existente
         const index = produtos.findIndex(p => p.id === parseInt(id));
         if (index > -1) {
             produtos[index] = { id: parseInt(id), nome, descricao, preco, categoria, imagem };
         }
     } else {
-        // Criar novo produto
         const novoId = produtos.length > 0 ? Math.max(...produtos.map(p => p.id)) + 1 : 1;
         produtos.push({ id: novoId, nome, descricao, preco, categoria, imagem });
     }
@@ -624,7 +622,6 @@ function editarProdutoForm(id) {
     document.getElementById('crud-preco').value = prod.preco;
     document.getElementById('crud-categoria').value = prod.categoria;
     
-    // Passa a imagem atual para o sistema
     document.getElementById('crud-imagem-atual').value = prod.imagem;
     document.getElementById('crud-imagem-nome').textContent = "Imagem já cadastrada";
 }
@@ -639,5 +636,5 @@ function apagarProdutoCrud(id) {
 
 function fecharPainelAdmin() {
     closeModal('admin-panel-modal');
-    renderizarProdutos(); // Aplica e atualiza tudo na tela do cliente imediatamente
+    renderizarProdutos();
 }
